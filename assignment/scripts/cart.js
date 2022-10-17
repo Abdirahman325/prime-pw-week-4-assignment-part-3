@@ -33,18 +33,36 @@ console.log( 'adding oranges', addItem('oranges'));
 console.log( 'adding grapes', addItem('grapes'));
 console.log( 'adding cantalooupe', addItem('cantaloupe'));
 
+
 function listItems() {
-    
+    for ( item of basket) {
+        console.log(item);
+    }
 }
 
+//double checking to see if items are in the basket
+console.log( 'my basket has', basket);
+
+function empty() {
+    basket = []
+}
+
+function removeItem(item) {
+    for ( let i = 0; i < basket.length; i++){
+        if (basket.indexOf(item) === i){
+            basket.splice( i, 0);
+            return item;
+        } else {
+            return null;
+        }
+    }
+}
+
+console.log(removeItem('oranges'))
+console.log(removeItem('grapes'))
+console.log(removeItem('cantaloupe'))
 
 
-
-
-
-
-
-
-
-
-
+// Removes all items from the basket.
+console.log('This will empty the basket', empty());
+console.log('basket is now ', basket);
